@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using Xunit.Sdk;
 
 namespace Calculator.Tests
 {
@@ -35,6 +36,50 @@ namespace Calculator.Tests
 
             // Then
             Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void TestMultiplyFourTimesSixIsTwentyFour()
+        {
+            //Arrange
+            var a = 4;
+            var b = 6;
+            var expected = 24;
+            var calculater = new Calculator();
+            
+            //Act
+            var actual = calculater.Multiply(a, b);
+            
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Fact]
+        public void TestTenDividedByFiveIsTwo()
+        {
+            //Arrange
+            const int a = 10;
+            const int b = 5;
+            const int expected = 2;
+            var calculater = new Calculator();
+            
+            //Act
+            var actual = calculater.Divide(a, b);
+            
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void DividedByZero()
+        {
+            //Arrange
+            const int a = 10;
+            const int b = 0;
+            var calculator = new Calculator();
+            
+            //Assert
+            Assert.Throws<ArgumentException>(() => calculator.Divide(a, b));
         }
     }
 }

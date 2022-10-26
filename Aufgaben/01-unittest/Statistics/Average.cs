@@ -7,6 +7,12 @@ namespace Statistics
     {
         public double Mean(List<int> numbers)
         {
+
+            if (numbers.Count == 0)
+            {
+                throw new ArgumentException();
+            }
+            
             int sum = 0;
             double mean = 0.0;
 
@@ -14,9 +20,13 @@ namespace Statistics
             {
                 sum += number;
             }
-
             mean = (double)sum / numbers.Count;
             return mean;
+        }
+
+        double Median(List<int> numbers)
+        {
+            throw new NotImplementedException();
         }
     }
 }

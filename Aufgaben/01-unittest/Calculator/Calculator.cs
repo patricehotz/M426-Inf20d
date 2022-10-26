@@ -13,5 +13,19 @@ namespace Calculator
         {
             return minuend - subtrahend;
         }
+
+        public int Multiply(int multiplicator, int multiplier)
+        {
+            return multiplicator * multiplier;
+        }
+
+        public int Divide(int mommy, int divider)
+        {
+            if (mommy == 0 || divider == 0)
+            {
+                throw new ArgumentException();
+            }
+            return mommy / divider;
+        }
     }
 }
